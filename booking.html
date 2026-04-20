@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Book an Appointment - DESTI FITNESS & HEALTH</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="programs.html">Programs</a>
+                    <ul class="submenu">
+                        <li><a href="schedule.html">Schedule</a></li>
+                    </ul>
+                </li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                    <ul class="submenu">
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Book a Fitness Appointment</h1>
+        <p>Ready to take the next step? Use the form below to reserve a session with one of our expert trainers.</p>
+        <section id="booking-form">
+            <form action="#" method="post">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone" required><br><br>
+
+                <label>Reservation Reason:</label><br>
+                <div style="margin: 10px 0 20px 0; text-align: left;">
+                    <label style="margin-right: 15px;"><input type="radio" name="reason" value="Personal Training" required> Personal Training</label>
+                    <label style="margin-right: 15px;"><input type="radio" name="reason" value="Group Class"> Group Class</label>
+                    <label><input type="radio" name="reason" value="Nutrition Consultation"> Nutrition Consultation</label>
+                </div>
+
+                <label for="inquiry">Inquiry Type:</label><br>
+                <select id="inquiry" name="inquiry" class="form-select" required>
+                    <option value="" disabled selected>Select an inquiry type...</option>
+                    <option value="New Booking">New Booking</option>
+                    <option value="Reschedule">Reschedule</option>
+                    <option value="Consultation Request">Consultation Request</option>
+                </select>
+
+                <label for="trainer">Choose a Trainer:</label><br>
+                <select id="trainer" name="trainer" class="form-select" required>
+                    <option value="" disabled selected>Select a trainer...</option>
+                    <option value="Michael Barber">Michael Barber (Aerobics/Cycling)</option>
+                    <option value="Tina Mack">Tina Mack (Nutrition/Wellness)</option>
+                    <option value="Fatima Sanchez">Fatima Sanchez (HIIT/Functional)</option>
+                    <option value="Joe Nickerson">Joe Nickerson (Strength/Conditioning)</option>
+                    <option value="Patria Smith">Patria Smith (Head Coach)</option>
+                    <option value="No Preference">No Preference</option>
+                </select>
+
+                <label for="date">Appointment Date:</label><br>
+                <input type="date" id="date" name="date" required style="margin-bottom: 20px;"><br>
+
+                <input type="submit" value="Request Booking">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DESTI FITNESS & HEALTH. All rights reserved.</p>
+            <div class="social-icons">
+               <a href="#"><img src="Facebook logo.png" alt="facebook"></a>
+               <a href="#"><img src="instagram logo.png" alt="instagram"></a>
+               <a href="#"><img src="X logo.png" alt="X"></a> 
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('#booking-form form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the page from reloading
+            alert('Thank you for your booking request! We will be in touch soon.');
+            this.reset(); // Clears the form fields after submission
+        });
+    </script>
+</body>
+</html>
