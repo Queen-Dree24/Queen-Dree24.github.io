@@ -1,0 +1,765 @@
+    /* 1. BACKGROUND & BODY - Image stays in the back */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #2d3436;
+    
+    /* Background Image Setup */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url('all-in-one2.png'); /* REPLACE with your image link */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Image stays put while you scroll */
+    background-repeat: no-repeat;
+}
+
+/* Typography & Global Layout Consistency */
+h1, h2, h3 {
+    color: #4834d4;
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 900; /* Makes the headings very bold */
+    letter-spacing: -0.5px; /* Tighter letter spacing for a modern look */
+}
+
+h1, h2 {
+    text-align: center;
+    /* 2026 Trend: Gradient Text */
+    background: linear-gradient(135deg, #4834d4, #6c5ce7, #ff7675);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Unified Page Containers to Ensure Readability over Prominent Background */
+main > section:not(.hero) {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 50px;
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+main > h1, main > p:not(.blog-meta) {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+main > h1 {
+    margin-top: 40px;
+    /* Pure CSS Fix: Multiple backgrounds allow both the frosted glass and text gradient to coexist safely */
+    background: 
+        linear-gradient(135deg, #4834d4, #6c5ce7, #ff7675), 
+        linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
+    -webkit-background-clip: text, border-box;
+    background-clip: text, border-box;
+    -webkit-text-fill-color: transparent;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 30px 30px 0 0;
+    border-bottom: none;
+}
+
+main > p:not(.blog-meta) {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 30px 30px;
+    border-top: none;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* 2. NAVIGATION - Electric Purple & Motivational Hover */
+nav {
+    background: rgba(108, 92, 231, 0.85); /* Vibrant translucent Purple */
+    backdrop-filter: blur(12px); /* 2026 Frosted Glass */
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3); /* Glowing drop shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px; /* Floating pill shape */
+    margin: 20px auto;
+    max-width: 1100px;
+    position: sticky; /* Stays at the top while scrolling */
+    top: 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth color transition */
+}
+
+/* Fun Hover Effect */
+nav ul li a:hover {
+    color: #feca57; /* Sunlight Yellow for a shot of energy */
+    text-shadow: 0 0 10px rgba(254, 202, 87, 0.5); /* Subtle glow */
+}
+
+/* Dropdown Submenu Styling */
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(72, 52, 212, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-width: 150px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Invisible bridge to prevent the submenu from disappearing when the mouse moves over the gap */
+nav ul li .submenu::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+nav ul li .submenu li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li .submenu li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+}
+
+nav ul li .submenu li a:hover {
+    background: #6c5ce7;
+    text-shadow: none;
+}
+
+/* 3. HERO SECTION - Image Banner */
+.hero {
+    color: #fff;
+    width: 100%;
+    position: relative; /* Keeps the text content overlaid exactly on top of the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8); /* Stronger dropshadow for better readability */
+}
+
+.hero-img {
+    width: 100%;
+    margin: 0; /* Removes margins so it sits completely flush against the screen edges */
+    object-fit: contain; /* Ensures the whole image is visible */
+    object-position: center; 
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-weight: 900; /* Makes the heading extra bold */
+    letter-spacing: -2px; /* Tighter spacing */
+    -webkit-text-fill-color: #fff; /* Overrides gradient for the image overlay */
+}
+
+.hero p {
+    font-weight: 700; /* Makes the paragraph thicker */
+    color: #feca57; /* Changed to a vibrant yellow - replace this hex code with any color you like! */
+}
+
+/* 4. BUTTONS - Action Coral */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff7675, #e84393); 
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(255, 118, 117, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(232, 67, 147, 0.5);
+}
+
+/* Custom Button Color to Match the Footer */
+.footer-btn {
+    background: linear-gradient(135deg, #4834d4, #6c5ce7);
+    box-shadow: 0 10px 20px rgba(72, 52, 212, 0.3);
+}
+
+.footer-btn:hover {
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.5);
+}
+
+/* 5. CARDS & GRIDS - Consistent Glass Look */
+.features, .blog-grid, .programs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-item, .program-card, .blog-preview {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy hover */
+    margin-bottom: 20px;
+}
+
+.feature-item:hover, .program-card:hover, .blog-preview:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.15);
+}
+
+/* Uniform Image Styling inside Cards & Sections */
+.blog-preview img {
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* Prevents the image from squishing or distorting */
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto 15px auto; /* Centers the image perfectly inside the preview */
+    object-fit: cover;
+}
+
+.program-card img {
+    width: 100%;
+    max-width: 400px; /* Matches the max-width of the first image on the programs page */
+    height: auto; /* Ensures the image doesn't get distorted or cropped */
+    border-radius: 10px;
+    margin: 0 auto 15px auto; /* Centers the image perfectly inside the card */
+    display: block; /* Required for margin auto to work */
+    object-fit: cover;
+}
+
+.feature-item img {
+    width: 100%;
+    max-width: 400px; /* Prevents the third image from stretching to full width if it wraps to a new row */
+    height: 300px; /* Restricts the height to make them smaller */
+    border-radius: 10px;
+    margin: 0 auto 15px auto; /* Centers the image inside the card */
+    display: block; /* Required for margin auto to correctly center the image */
+    object-fit: contain; /* Ensures the full image (and the text inside it) is 100% visible */
+}
+
+/* Center the headings and paragraphs in the feature cards */
+.feature-item h3, .feature-item p {
+    text-align: center;
+}
+
+/* Size and center the images on the About page */
+#about-hero img {
+    max-width: 100%; /* Allows the HTML width attribute to control the size while staying mobile responsive */
+    height: auto;
+    object-fit: contain; /* Ensures the full picture shows without getting cut off */
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+}
+
+#meet-the-founder img, #our-values img {
+    max-width: 100%; /* Allows the HTML width attribute to control the size while staying mobile responsive */
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto; /* Centers the images perfectly */
+}
+
+/* Clean list styling inside program cards and about page */
+.program-card ul, #our-values ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.program-card ul li, #our-values ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #dfe6e9;
+    font-size: 0.95rem;
+}
+
+.program-card ul li:last-child, #our-values ul li:last-child {
+    border-bottom: none;
+}
+
+.program-card ul li strong, #our-values ul li strong {
+    color: #4834d4;
+}
+
+#featured-post > img {
+    width: 100%;
+    max-width: 500px; /* Stretches the image appropriately without making it massively huge */
+    height: auto; /* Prevents the image from distorting as the screen shrinks */
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto; /* Centers the images seamlessly */
+}
+
+/* Make images on the Programs page smaller and centered */
+#program-overview img, #class-offerings > img {
+    width: 100%;
+    max-width: 400px; /* Restricts the size so they don't stretch too large */
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto; /* Centers the images perfectly */
+}
+
+/* Center and slightly stretch images on the Nutrition page */
+#nutrition-hero img, #our-approach img, #services-meal-planning img, #nutritional-breakdowns img, #muscle-growth-supplements img {
+    width: 100%;
+    max-width: 500px; /* Stretches the image a little bit without making it too huge */
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto; /* Centers the images perfectly */
+}
+
+/* Center alignment for specific CTA sections */
+.testimonials, .cta-banner, #schedule-cta, #subscribe-cta, #call-to-action, #location-map, #contact-info, #contact-form, #booking-form, #feedback-form, #program-overview, #nutrition-hero, #about-hero {
+    text-align: center;
+}
+
+#location-map img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+/* Clean styling for Contact Info List */
+#contact-info ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left; /* Keeps the text readable while the block is centered */
+}
+
+#contact-info ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+#contact-info ul li:last-child {
+    border-bottom: none;
+}
+
+#call-to-action p {
+    color: #4834d4;
+}
+
+#call-to-action .btn {
+    margin: 10px 5px; /* Adds a little bit of space between the two buttons */
+}
+
+/* Subscribe Form & Links */
+#subscribe-cta form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#contact-form form, #booking-form form, #feedback-form form {
+    max-width: 500px;
+    margin: 0 auto; /* Centers the contact form horizontally */
+    text-align: left; /* Keeps the labels perfectly aligned to the left */
+}
+
+/* Make all sections on the contact page the same uniform size */
+main > section#contact-info,
+main > section#feedback-form,
+main > section#location-map {
+    max-width: 700px;
+    padding: 30px;
+}
+
+input[type="email"], input[type="text"], textarea, input[type="date"] {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 15px; /* Softly rounded corners for standard forms */
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Custom styling for dropdown and feedback fields */
+.form-select {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin-bottom: 15px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.rating-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0 20px 0;
+}
+
+#subscribe-cta input[type="email"] {
+    border-radius: 50px; /* Keeps the pill shape for the subscribe bar */
+    width: 300px;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, textarea:focus, input[type="date"]:focus, .form-select:focus {
+    border-color: #6c5ce7;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2); /* Glowing focus ring */
+}
+
+form button, input[type="submit"], section#schedule-cta a, .view-all-button {
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+    color: white !important;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none !important;
+    display: inline-block;
+    box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+form button:hover, input[type="submit"]:hover, section#schedule-cta a:hover, .view-all-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(72, 52, 212, 0.5);
+}
+
+/* Schedule Table Styling */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background-color: white;
+}
+
+th {
+    background-color: #6c5ce7; /* Highlights the header with your primary purple */
+    color: white;
+    padding: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #dfe6e9;
+}
+
+th:first-child, td:first-child {
+    white-space: nowrap; /* Keeps the time formatting side-by-side on a single line */
+    vertical-align: middle; /* Ensures perfect vertical alignment */
+}
+
+td strong {
+    color: #4834d4; /* Deep purple to make the class names pop */
+    font-weight: 900;
+    display: block; /* Puts the class name neatly above the location text */
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+}
+
+/* 6. THE UPDATED FOOTER - Fun & Motivational */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c1b8c, #4834d4); 
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: none;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    vertical-align: middle;
+    max-width: 40px; /*Ensures image stays within defined dimensions*/
+    object-fit: contain;
+}
+
+/
+
+/* Meet Our Trainers Section */
+.trainers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.trainer-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px; /* Limit card width for better layout */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.15);
+}
+
+/* New layout for Meet Our Trainers section */
+.trainers-split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.trainer-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trainer-photo {
+    flex-basis: 300px;
+    flex-shrink: 0;
+}
+
+.trainer-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.trainer-info {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.trainer-column.left .trainer-info {
+    border-left: 5px solid #6c5ce7;
+}
+
+.trainer-column.right {
+    text-align: right;
+}
+
+.trainer-column.right .trainer-info {
+    border-right: 5px solid #6c5ce7;
+}
+/* 7. RESPONSIVE DESIGN - Media Queries */
+
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+    .features, .blog-grid, .programs-grid {
+        gap: 20px;
+    }
+
+    .feature-item, .program-card, .blog-preview {
+        padding: 25px;
+    }
+}
+
+/* For tablets and mobile devices */
+@media (max-width: 768px) {
+    /* --- General Layout & Typography --- */
+    body {
+        line-height: 1.5;
+    }
+
+    nav {
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Slightly smaller for mobile hero */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    main > section:not(.hero) {
+        padding: 25px;
+        margin: 25px 15px;
+    }
+
+    /* Perfectly aligns the introductory text blocks with the sections on mobile */
+    main > h1, main > p:not(.blog-meta) {
+        padding: 20px; /* Reduces side padding to prevent text from being too squished */
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    /* --- Navigation --- */
+    nav ul li {
+        display: block; /* Stack navigation links vertically */
+        margin: 12px 0;
+    }
+
+    nav ul li .submenu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        margin-top: 10px;
+    }
+
+    /* --- Grids & Cards --- */
+    .features, .blog-grid, .programs-grid {
+        flex-direction: column; /* Force cards to stack vertically into a single column */
+        gap: 25px;
+    }
+
+    /* --- Forms --- */
+    #subscribe-cta input[type="email"] {
+        width: 100%; /* Make subscribe input full-width */
+    }
+
+    #subscribe-cta form {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trainer-card {
+        max-width: 100%; /* Allow trainer cards to take full width on mobile */
+    }
+
+    .trainers-split-layout {
+        flex-direction: column;
+    }
+    .trainer-photo {
+        order: 1; /* Photo appears first on mobile */
+    }
+    .trainer-column.left {
+        order: 2;
+    }
+    .trainer-column.right {
+        order: 3;
+        text-align: left; /* Revert to left align on mobile for readability */
+    }
+    .trainer-column.right .trainer-info {
+        border-right: none;
+        border-left: 5px solid #6c5ce7; /* Consistent border on mobile */
+    }
+}
+
+/* For smaller mobile devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .btn, form button, input[type="submit"], section#schedule-cta a, .view-all-button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}

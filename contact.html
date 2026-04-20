@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+    <title>Contact Us - DESTI FITNESS & HEALTH</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li>
+                    <a href="programs.html">Programs</a>
+                    <ul class="submenu">
+                        <li><a href="schedule.html">Schedule</a></li>
+                    </ul>
+                </li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                    <ul class="submenu">
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contact-info">
+            <h1>Get in Touch</h1>
+            <p>Ready to start your journey, ask a question, or simply say hello? We're here to help! Reach out to us through any of the methods below, or check our schedule to find the perfect class for you.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:info@destifitness.com">info@destifitness.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+1-555-DESTIFIT">+1 (904) DESTI-FIT</a></li>
+                <li><strong>Address:</strong> 4827 Silver Palm Way, Suite 456 Jacksonville, FL 3224</li>
+                <li><strong>Operating Hours:</strong> Mon-Fri: 6 AM - 8 PM, Sat: 8 AM - 2 PM, Sun: Closed</li>
+                <li><strong>Website:</strong>www.DF&Health.com</li>
+                <li><strong>Social Media:</strong>Instagram, Facebook, and follow us on X:@DF&H</li>
+            </ul>
+        </section>
+        <section id="feedback-form">
+            <h2>Let Us Know How We're Doing</h2>
+            <p>We value your feedback to help us improve our services and facility.</p>
+            <form action="#" method="post">
+                <label for="feedback-name">Name (Optional):</label><br>
+                <input type="text" id="feedback-name" name="feedback-name"><br><br>
+                
+                <div class="rating-group">
+                    <label><strong>How would you rate your experience?</strong></label>
+                    <label><input type="radio" name="rating" value="5" required> 5 - Excellent</label>
+                    <label><input type="radio" name="rating" value="4"> 4 - Good</label>
+                    <label><input type="radio" name="rating" value="3"> 3 - Average</label>
+                    <label><input type="radio" name="rating" value="2"> 2 - Fair</label>
+                    <label><input type="radio" name="rating" value="1"> 1 - Poor</label>
+                </div>
+
+                <label for="feedback-comments">Your Feedback:</label><br>
+                <textarea id="feedback-comments" name="feedback-comments" rows="4" placeholder="Tell us what you think..." required></textarea><br><br>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DESTI FITNESS & HEALTH. All rights reserved.</p>
+            <div class="social-icons">
+               <a href="#"><img src="Facebook logo.png" alt="facebook"></a>
+               <a href="#"><img src="instagram logo.png" alt="instagram"></a>
+               <a href="#"><img src="X logo.png" alt="X"></a> 
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('#feedback-form form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the page from reloading
+            alert('Thank you for your feedback!');
+            this.reset(); // Clears the form fields after submission
+        });
+    </script>
+</body>
+</html>
